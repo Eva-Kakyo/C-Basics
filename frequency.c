@@ -7,15 +7,19 @@ int main () {
     int freq = 0;
 
     printf("Enter a sentence.\n");
-    scanf("%s", &sentence);
+    fgets(sentence, sizeof(sentence), stdin);
+    //puts(sentence);
+
     printf("Enter a letter.\n");
     scanf("%c", &letter);
 
-    int length = sizeof(sentence)/sizeof(sentence[0]);
 
-    for(int i=0; i<length; i++) {
+    //int length = sizeof(sentence)/sizeof(sentence[0]);
+    //printf("%d", length);
+
+    for(int i=0; sentence[i]!='\0'; i++) {
         if(sentence[i]==letter) {
-           freq+=1;
+           freq++;
         }
     }
     printf("%d", freq);
